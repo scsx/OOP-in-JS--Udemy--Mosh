@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="">
+<title>Document</title>
+<script src="18-objects.js"></script>
+</head>
+<body>
+
+
+!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// The simplest way to create an object is using an object literal </span>
+<span style="color: #008800; font-weight: bold">const</span> circle <span style="color: #333333">=</span> { 
+   radius<span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>, 
+   draw<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>() {}
+}; 
+   
+<span style="color: #888888">// To create multiple objects with the same structure and behaviuor (methods), use a factory or a constructor. </span>
+
+<span style="color: #888888">// Factory function </span>
+<span style="color: #008800; font-weight: bold">function</span> createCircle(radius) { 
+   <span style="color: #008800; font-weight: bold">return</span> {
+      radius, 
+      draw<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>() {}
+   } 
+} 
+
+<span style="color: #888888">// Constructor function </span>
+<span style="color: #008800; font-weight: bold">function</span> Circle(radius) { 
+    <span style="color: #008800; font-weight: bold">this</span>.radius <span style="color: #333333">=</span> radius; 
+    <span style="color: #008800; font-weight: bold">this</span>.draw <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>() {}
+} 
+    
+<span style="color: #888888">// Every object has a &quot;constructor&quot; property which returns the function that was used to construct or create that object. </span>
+<span style="color: #008800; font-weight: bold">const</span> x <span style="color: #333333">=</span> {};
+x.constructor; <span style="color: #888888">// returns Object() </span>
+   
+<span style="color: #888888">// In JavaScript, functions are objects. They have properties and methods. </span>
+Circle.name; 
+Circle.length;
+Circle.constructor; <span style="color: #888888">// returns Function()</span>
+Circle.call({}, <span style="color: #0000DD; font-weight: bold">1</span>); <span style="color: #888888">// to call the Circle function </span>
+Circle.apply({}, [<span style="color: #0000DD; font-weight: bold">1</span>]);
+
+<span style="color: #888888">// Value types are copied by their value, reference types are copied by their reference. </span>
+<span style="color: #888888">// Value types in JavaScript are: String, Number, Boolean, Symbol, undefined and null</span>
+<span style="color: #888888">// Reference types are: Object, Function and Array </span>
+   
+<span style="color: #888888">// JavaScript objects are dynamic. You can add/remove properties: </span>
+circle.location <span style="color: #333333">=</span> {};
+circle[<span style="background-color: #fff0f0">&#39;location&#39;</span>] <span style="color: #333333">=</span> {};
+                      
+<span style="color: #008800; font-weight: bold">delete</span> circle.location; 
+                      
+<span style="color: #888888">// To enumerate the members in an object: </span>
+<span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">let</span> key <span style="color: #008800; font-weight: bold">in</span> circle) console.log(key, circle[key]);
+
+<span style="color: #007020">Object</span>.keys(circle); 
+                      
+<span style="color: #888888">// To see if an object has a given property</span>
+<span style="color: #008800; font-weight: bold">if</span> (<span style="background-color: #fff0f0">&#39;location&#39;</span> <span style="color: #008800; font-weight: bold">in</span> circle)
+                      
+<span style="color: #888888">// Abstraction means hiding the complexity/details and showing only the essentials. </span>
+<span style="color: #888888">// We can hide the details by using private members. Replace &quot;this&quot; with &quot;let&quot;. </span>
+
+<span style="color: #008800; font-weight: bold">function</span> Circle(radius) { 
+   <span style="color: #888888">// Public member </span>
+   <span style="color: #008800; font-weight: bold">this</span>.radius <span style="color: #333333">=</span> radius; 
+
+   <span style="color: #888888">// Private member                       </span>
+   <span style="color: #008800; font-weight: bold">let</span> defaultLocation <span style="color: #333333">=</span> {};                      
+}                       
+
+<span style="color: #888888">// To define a getter/setter, use Object.defineProperty():</span>
+<span style="color: #007020">Object</span>.defineProperty(<span style="color: #008800; font-weight: bold">this</span>, <span style="background-color: #fff0f0">&#39;defaultLocation&#39;</span>, {
+    get<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>() { <span style="color: #008800; font-weight: bold">return</span> defaultLocation; },
+    set<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>(value) { defaultLocation <span style="color: #333333">=</span> value; }
+}); 
+</pre></div>
+
+</body>
+</html>
