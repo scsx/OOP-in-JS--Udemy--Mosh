@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="">
+<title>Document</title>
+<script src="18-objects.js"></script>
+</head>
+<body>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// Every object (except the root object) has a prototype (parent). </span>
+<span style="color: #888888">// To get the prototype of an object:</span>
+<span style="color: #007020">Object</span>.getPrototypeOf(obj); 
+
+<span style="color: #888888">// In Chrome, you can inspect &quot;__proto__&quot; property. But you should </span>
+<span style="color: #888888">// not use that in the code. </span>
+
+<span style="color: #888888">// To get the attributes of a property:</span>
+<span style="color: #007020">Object</span>.getOwnPropertyDescriptor(obj, <span style="background-color: #fff0f0">&#39;propertyName&#39;</span>);
+
+<span style="color: #888888">// To set the attributes for a property:</span>
+<span style="color: #007020">Object</span>.defineProperty(obj, <span style="background-color: #fff0f0">&#39;propertyName&#39;</span>, {
+    configurable<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,    <span style="color: #888888">// cannot be deleted</span>
+    writable<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,
+    enumerable<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>
+});
+
+<span style="color: #888888">// Constructors have a &quot;prototype&quot; property. It returns the object </span>
+<span style="color: #888888">// that will be used as the prototype for objects created by the constructor. </span>
+<span style="color: #007020">Object</span>.prototype <span style="color: #333333">===</span> <span style="color: #007020">Object</span>.getPrototypeOf({})
+<span style="color: #007020">Array</span>.prototype <span style="color: #333333">===</span> <span style="color: #007020">Object</span>.getPrototypeOf([])
+
+<span style="color: #888888">// All objects created with the same constructor will have the same prototype. </span>
+<span style="color: #888888">// A single instance of this prototype will be stored in the memory. </span>
+<span style="color: #008800; font-weight: bold">const</span> x <span style="color: #333333">=</span> {};
+<span style="color: #008800; font-weight: bold">const</span> y <span style="color: #333333">=</span> {};
+<span style="color: #007020">Object</span>.getPrototypeOf(x) <span style="color: #333333">===</span> <span style="color: #007020">Object</span>.getPrototypeOf(y); <span style="color: #888888">// returns true </span>
+
+<span style="color: #888888">// Any changes to the prototype will be immediately visible to all objects </span>
+<span style="color: #888888">// referencing this prototype. </span>
+
+<span style="color: #888888">// When dealing with large number of objects, it&#39;s better to put their</span>
+<span style="color: #888888">// methods on their prototype. This way, a single instance of the methods</span>
+<span style="color: #888888">// will be in the memory. </span>
+Circle.prototype.draw <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>() {}
+
+<span style="color: #888888">// To get the own/instance properties:</span>
+<span style="color: #007020">Object</span>.keys(obj);
+
+<span style="color: #888888">// To get all the properties (own + prototype): </span>
+<span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">let</span> key <span style="color: #008800; font-weight: bold">in</span> obj) {}
+</pre></div>
+</body>
+</html>
