@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="">
+<script src="41.11 - solution.js"></script>
+<title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p><span>Alright now it's</span></p>
+        </div>
+        <div>
+            <p><span>time for an exercise. I want you to design two objects,</span></p>
+        </div>
+        <div>
+            <p><span>one is HtmlElement, and the other is html</span></p>
+        </div>
+        <div>
+            <p><span>SelectElement which represents a drop down list.</span></p>
+        </div>
+        <div>
+            <p><span>We have prototypical inheritance, we have an
+                    HtmlSelectElement,</span></p>
+        </div>
+        <div>
+            <p><span>and it's parent, which is HTML element. Now see how</span></p>
+        </div>
+        <div>
+            <p><span>these objects behave. I'm going to define a constant,</span></p>
+        </div>
+        <div>
+            <p><span>and set it to a new HTMLElement, let's inspect this object,</span>
+            </p>
+        </div>
+        <div>
+            <p><span>so in this object, we have one method.</span></p>
+        </div>
+        <div>
+            <p><span>Click. In it's prototype we have</span></p>
+        </div>
+        <div>
+            <p><span>another method, focus, the implementation of these methods is
+                    very</span></p>
+        </div>
+        <div>
+            <p><span>simple. Just a console.log statement. What is</span></p>
+        </div>
+        <div>
+            <p><span>important here is that we have one instance of own method,
+                    and</span></p>
+        </div>
+        <div>
+            <p><span>one prototype method. So we'll start with this object.</span></p>
+        </div>
+        <div>
+            <p><span>implement it, test it, make sure it works, so we can call</span>
+            </p>
+        </div>
+        <div>
+            <p><span>e.click and we get this message and e.</span></p>
+        </div>
+        <div>
+            <p><span>focus we get this message. Once we have</span></p>
+        </div>
+        <div>
+            <p><span>HtmlElement, go ahead and create Html</span></p>
+        </div>
+        <div>
+            <p><span>SelectElement. Let's see how that object behaves. So I'm going to
+                    define</span></p>
+        </div>
+        <div>
+            <p><span>another constant, send it to a new Html</span></p>
+        </div>
+        <div>
+            <p><span>SelectElement. Now here in the constructor we can optionally
+                    pass</span></p>
+        </div>
+        <div>
+            <p><span>an array of items, but we don't have</span></p>
+        </div>
+        <div>
+            <p><span>to. If we don't pass anything here, it will be initialized</span>
+            </p>
+        </div>
+        <div>
+            <p><span>by an empty array. Let's inspect this object.</span></p>
+        </div>
+        <div>
+            <p><span>So here we have this items property which is</span></p>
+        </div>
+        <div>
+            <p><span>initialized in an empty array. You also have two methods add
+                    item</span></p>
+        </div>
+        <div>
+            <p><span>and remove item. I can call s</span></p>
+        </div>
+        <div>
+            <p><span>.addItem and add 1 here, let's add</span></p>
+        </div>
+        <div>
+            <p><span>2 as well. Now, we</span></p>
+        </div>
+        <div>
+            <p><span>removeItem 2,</span></p>
+        </div>
+        <div>
+            <p><span>let's inspect it one more time, so, in this</span></p>
+        </div>
+        <div>
+            <p><span>items array we only have one item, one,</span></p>
+        </div>
+        <div>
+            <p data-purpose="transcript-cue-active" class="transcript--underline-cue--3osdw" role="button"><span
+                    data-purpose="cue-text" class="transcript--highlight-cue--1bEgq">okay? Now, what is important here,
+                    is</span></p>
+        </div>
+        <div>
+            <p><span>this HtmlSelectElement inherits from HtmlElement</span></p>
+        </div>
+        <div>
+            <p><span>So let's look at this prototype.</span></p>
+        </div>
+        <div>
+            <p><span>This prototype is an instance of HTML Element</span></p>
+        </div>
+        <div>
+            <p><span>object. Remember our HTML Element Objects have two</span></p>
+        </div>
+        <div>
+            <p><span>methods. One is click, which is an instance or own method,</span>
+            </p>
+        </div>
+        <div>
+            <p><span>and the other is focus, which is a prototype method.</span></p>
+        </div>
+        <div>
+            <p><span>So this is the tricky part of this exercise, I want you to</span>
+            </p>
+        </div>
+        <div>
+            <p><span>pay great attention to this part. So do not use the extend
+                    function</span></p>
+        </div>
+        <div>
+            <p><span>that we created earlier in this section, I want you to
+                    manually</span></p>
+        </div>
+        <div>
+            <p><span>set the prototype for HTMLSelectElement</span></p>
+        </div>
+        <div>
+            <p><span>you should set that plan, instance of the HTML object
+                    element,</span></p>
+        </div>
+        <div>
+            <p><span>because the click method is on the instance. If you set the
+                    prototype</span></p>
+        </div>
+        <div>
+            <p><span>of HtmlSelectElement to the prototype of</span></p>
+        </div>
+        <div>
+            <p><span>Html element, you will only get the focus method, because</span>
+            </p>
+        </div>
+        <div>
+            <p><span>this is defined on the prototype. So go ahead, spend about 20
+                    to</span></p>
+        </div>
+        <div>
+            <p><span>maximum 30 minutes on this exercise, and next you will see my
+                    solution.</span></p>
+        </div>
+    </div>
+</body>
+
+</html>
