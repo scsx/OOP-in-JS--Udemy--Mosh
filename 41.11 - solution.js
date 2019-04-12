@@ -1,4 +1,4 @@
-//PARENT
+// PARENT
 function HTMLElement() {
     this.click = function() {
         console.log("clicked");
@@ -25,5 +25,5 @@ function HTMLSelectElement( items = [] ) { // items = [] is ES6
 HTMLSelectElement.prototype = new HTMLElement();
 
 const e = new HTMLElement();
-const s = new HTMLSelectElement();
-const sa = new HTMLSelectElement([1,2,3]);
+const s = new HTMLSelectElement(); // empty, ok
+const sa = new HTMLSelectElement([1,2,3]); // ok

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="">
+    <script src="43.12 - Solution.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-purpose="transcript-panel">
+        <div>
+            <p><span>Alright, now the</span></p>
+        </div>
+        <div>
+            <p><span>second exercise. Continuing from the last exercise, I want you to
+                    extend</span></p>
+        </div>
+        <div>
+            <p><span>HtmlSelectElement, and implement a grander</span></p>
+        </div>
+        <div>
+            <p><span>method. So here I'm going to define an HtmlSelect</span></p>
+        </div>
+        <div>
+            <p><span>Element, and initialize it with an array of</span></p>
+        </div>
+        <div>
+            <p><span>3 items. Now s.render, this is what</span></p>
+        </div>
+        <div>
+            <p><span>we get, the select element with three options,</span></p>
+        </div>
+        <div>
+            <p><span>now similarly I want you to create an HTML image element</span></p>
+        </div>
+        <div>
+            <p><span>that inherits from HTML element, so
+                    it can be clicked, it can</span></p>
+        </div>
+        <div>
+            <p><span>be focused, but it also has it's own render method.</span></p>
+        </div>
+        <div>
+            <p><span>So, let's create an image here, new</span></p>
+        </div>
+        <div>
+            <p><span>HtmlImageElement. Now here, we can</span></p>
+        </div>
+        <div>
+            <p><span>optionally pass the source or the address of the image,</span></p>
+        </div>
+        <div>
+            <p><span>I'm not going to set this yet, let's inspect this element.</span>
+            </p>
+        </div>
+        <div>
+            <p><span>So, here we have a source property which is undefined,</span></p>
+        </div>
+        <div>
+            <p><span>and the render method. You can see it's prototype.</span></p>
+        </div>
+        <div>
+            <p><span>So it inherits from an instance of HtmlElement, it</span></p>
+        </div>
+        <div>
+            <p><span>has the click method as well as the focus method.</span></p>
+        </div>
+        <div>
+            <p><span>So now, I'm going to set image.source</span></p>
+        </div>
+        <div>
+            <p><span>to http whatever</span></p>
+        </div>
+        <div>
+            <p><span>doesn't really matter, and call image.render</span></p>
+        </div>
+        <div>
+            <p><span>so we get an image element in html.</span></p>
+        </div>
+        <div>
+            <p><span>Once you do this, then I want you to create</span></p>
+        </div>
+        <div>
+            <p><span>an array of elements, so here we have one select element and</span>
+            </p>
+        </div>
+        <div>
+            <p><span>one image element. Then, iterate over this</span></p>
+        </div>
+        <div>
+            <p><span>array of elements and render them each. Note that here,</span></p>
+        </div>
+        <div>
+            <p><span>my render method is returning a string, it's not doing a</span></p>
+        </div>
+        <div>
+            <p><span>console.log, it's not the responsibility of this object.</span></p>
+        </div>
+        <div>
+            <p><span>We don't want to couple this render method with console.log, we
+                    just want</span></p>
+        </div>
+        <div>
+            <p><span>html representation of an element, and somewhere else we</span></p>
+        </div>
+        <div>
+            <p><span>decide what to do with that Html representation. Maybe we want to
+                    add</span></p>
+        </div>
+        <div>
+            <p><span>it to document object model, or maybe you want to log it on the
+                    console.</span></p>
+        </div>
+        <div>
+            <p><span>That's why we shouldn't use console log inside</span></p>
+        </div>
+        <div>
+            <p><span>the render method. So this is your polymorphism exercise. You
+                    have</span></p>
+        </div>
+        <div>
+            <p><span>different objects that all have the same parent, they all have a
+                    render method</span></p>
+        </div>
+        <div>
+            <p><span>but the render method behaves different, you have different
+                    forms</span></p>
+        </div>
+        <div>
+            <p><span>or multiple forms of the render method. That's what we call</span>
+            </p>
+        </div>
+        <div>
+            <p><span>polymorphism, so save the changes, back in the console,</span></p>
+        </div>
+        <div>
+            <p><span>that's what you should get.</span></p>
+        </div>
+    </div>
+</body>
+
+</html>
