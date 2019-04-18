@@ -3,7 +3,6 @@ const _move = new WeakMap(); // weakmaps because the keys are weak
 
 class Circle {
     constructor(radius) {
-
         _radius.set(this, radius); // how to access private property _radius
         // Object: this = the Circle instance, below: c
         // value: radius argument
@@ -29,12 +28,13 @@ class Circle {
     }
 
     draw() { // public method
-
-        console.log( _radius.get(this) * 9); // access private _radius from public method draw
+        console.log( _radius.get(this) ); // access private _radius from public method draw
         _move.get(this)();
         console.log("draw ocurred");
     }    
 }
 
-const c = new Circle (2);
-c.draw(); // 18
+const c = new Circle (55);
+c.draw(); // 55
+
+console.log(_radius.get(c) ); // 55; this works as well
